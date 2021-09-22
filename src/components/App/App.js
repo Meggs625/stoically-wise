@@ -44,7 +44,7 @@ const App = () => {
         <Route exact path='/' render={() => 
           <div className='landing-page'>
             <div className='welcome-header'>
-              <h1 >Welcome!</h1>
+              <h1 >Welcome</h1>
               <h2>Choose a theme</h2>
             </div>
             {chosenTheme && <h2>{chosenTheme}</h2>}
