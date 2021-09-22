@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('../../spring-flowers.jpg');
+  background-size: cover;
+  color:#9B59B6;
 }
 
 .welcome-header {
@@ -15,16 +18,22 @@
 
 footer {
   height: 6vh;
-  width: 96vw;
+  width: 90vw;
   border-top: 1px solid #9B59B6;
   font-size: .5em;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 0% 5%;
   color:#9B59B6
 }
+.credit {
+  margin: 2%;
+}
 
-/* .App {
+/*Image of flowers by <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316535">PublicDomainPictures</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316535">Pixabay</a>
+
+.App {
   text-align: center;
 }
 
