@@ -2,10 +2,12 @@
 
 .brand {
   display: flex;
-  margin: 2%;
-  border-bottom:  1px solid #9B59B6;
-  height: 10%;
-  width: 100%;
+  padding: 2%;
+  background: #b8dfea69;
+  box-shadow: inset 0 -1px 0 0 #fff, 0 1px 5px #9B59B6;
+  height: 8vh;
+  width: 96vw;
+  background: ;
 }
 
 .brand-name {
