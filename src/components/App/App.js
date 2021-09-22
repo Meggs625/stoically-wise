@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ThemePage from '../ThemePage/ThemePage';
+import ThemeForm from '../ThemeForm/ThemeForm';
 import Navbar from '../Navbar/Navbar';
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
         <Route exact path='/' render={() => 
           <div>
             <h1>Hello!</h1>
-            <ThemePage /> 
+            <ThemeForm /> 
           </div>}
         />
 
