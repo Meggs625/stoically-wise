@@ -58,8 +58,8 @@ const App = () => {
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
       <footer>
-          <p>Images by pixabay</p>
-          <p>Quotes from stoic-api</p>
+          <p className='credit'>Images by pixabay</p>
+          <p className='credit'>Quotes from stoic-api</p>
       </footer>
     </main>
   );
