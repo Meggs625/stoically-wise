@@ -1,0 +1,21 @@
+/* #9B59B6 */
+
+.brand {
+  display: flex;
+  padding: 2%;
+  background:#d1e4e92b;
+  box-shadow: inset 0 -1px 0 0 #fff, inset -5px -4px 5px #9b59b64a;
+  height: 8vh;
+  width: 96vw;
+  background: ;
+}
+
+.brand-name {
+  font-size: 1em;
+  color: #9B59B6;
+}
+
+.logo {
+  height: 2em;
+  width: auto;
+}
