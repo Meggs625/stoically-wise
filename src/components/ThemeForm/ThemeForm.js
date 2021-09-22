@@ -14,7 +14,7 @@ const ThemeForm = ({ updateTheme }) => {
 
   return (
     <section>
-      <h2>Welcome! Enter a Theme</h2>
+      <h2>Choose a Theme</h2>
       <form>
         <input
           type='text'
