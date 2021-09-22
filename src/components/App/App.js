@@ -42,8 +42,11 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route exact path='/' render={() => 
-          <div >
-            <h1>Welcome!</h1>
+          <div className='landing-page'>
+            <div className='welcome-header'>
+              <h1 >Welcome!</h1>
+              <h2>Choose a theme</h2>
+            </div>
             {chosenTheme && <h2>{chosenTheme}</h2>}
             <ThemeForm updateTheme={updateTheme}/> 
           </div>}
@@ -53,7 +56,11 @@ const App = () => {
 
         />
         <Route render={() => <h1>Nothing to see here</h1>} />
-      </Switch>   
+      </Switch> 
+      <footer>
+          <p>Images by pixabay</p>
+          <p>Quotes from stoic-api</p>
+      </footer>
     </main>
   );
 }
