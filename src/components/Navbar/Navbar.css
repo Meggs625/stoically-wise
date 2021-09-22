@@ -3,8 +3,8 @@
 .brand {
   display: flex;
   padding: 2%;
-  background: #b8dfea69;
-  box-shadow: inset 0 -1px 0 0 #fff, 0 1px 5px #9B59B6;
+  background:#d1e4e92b;
+  box-shadow: inset 0 -1px 0 0 #fff, inset -5px -4px 5px #9b59b64a;
   height: 8vh;
   width: 96vw;
   background: ;
