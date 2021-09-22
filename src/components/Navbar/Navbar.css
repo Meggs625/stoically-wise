@@ -1,0 +1,19 @@
+/* #9B59B6 */
+
+.brand {
+  display: flex;
+  margin: 2%;
+  border-bottom:  1px solid #9B59B6;
+  height: 10%;
+  width: 100%;
+}
+
+.brand-name {
+  font-size: 1em;
+  color: #9B59B6;
+}
+
+.logo {
+  height: 2em;
+  width: auto;
+}
