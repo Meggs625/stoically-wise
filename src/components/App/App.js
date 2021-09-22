@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ThemeForm from '../ThemeForm/ThemeForm';
+import Quote from '../Quote/Quote';
 import Navbar from '../Navbar/Navbar';
 import './App.css';
 
@@ -47,13 +48,10 @@ const App = () => {
               <h1 >Welcome</h1>
               <h2>Choose a theme</h2>
             </div>
-            {chosenTheme && <h2>{chosenTheme}</h2>}
             <ThemeForm updateTheme={updateTheme}/> 
           </div>}
         />
-
-        <Route exact path='/quote' render={() => <h1>Quote</h1>}
-
+        <Route exact path='/quote' render={() => <Quote theme={chosenTheme} />}
         />
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
