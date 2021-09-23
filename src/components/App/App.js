@@ -11,7 +11,12 @@ const App = () => {
 
 
   const updateTheme = (inputTheme) => {
+    storeTheme(inputTheme)
     setChosenTheme(inputTheme);
+  }
+
+  const storeTheme = (theme) => {
+    localStorage.setItem('chosenTheme', JSON.stringify(theme))
   }
 
 
