@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
 
-const Quote = ({ theme }) => {
+const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
   const [pics, setPics] = useState([]);
@@ -21,13 +21,14 @@ const Quote = ({ theme }) => {
   }
   const randomPic = () => {
     const randomIndex =  Math.floor(Math.random() * pics.length)
-    console.log((randomIndex), 'index')
-    console.log(pics[1])
     return pics[randomIndex].largeImageURL
   }
 
   useEffect(() => {
-    fetchData()
+    if(!theme) {
+      retrieveFromStorage()
+    }
+    fetchData()   
     fetchPhotos()
   }, [])
 
