@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import ThemeForm from '../ThemeForm/ThemeForm';
 import Quote from '../Quote/Quote';
 import Navbar from '../Navbar/Navbar';
@@ -44,7 +44,7 @@ const App = () => {
             </div>
             <ThemeForm updateTheme={updateTheme}/> 
             {chosenTheme && 
-              <button>{`Use previous theme: ${chosenTheme}`}</button>}
+              <Link to='/quote'><button>{`Use previous theme: ${chosenTheme}`}</button></Link>}
           </div>}
         />
         <Route exact path='/quote' render={() => 
