@@ -1,5 +1,15 @@
 .main-display {
   height: 80vh;
   width: 100vw;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
   background-size: cover;
+}
+
+.quote, 
+.author {
+  color: white;
 }
