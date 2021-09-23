@@ -14,7 +14,7 @@ const Quote = ({ theme }) => {
   }
 
   const fetchPhotos = () => {
-    return fetch('https://pixabay.com/api/?key=23483948-a9995475fd38e7480dc10e8df&q=birds&image_type=photo')
+    return fetch(`https://pixabay.com/api/?key=23483948-a9995475fd38e7480dc10e8df&q=${theme}&image_type=photo`)
       .then(res => res.ok ? res.json() : console.log(res))
       .then(data => setPics(data.hits))
       .catch(err => console.log(err))
@@ -34,21 +34,14 @@ const Quote = ({ theme }) => {
 
   const displayInfo = () => {
     return quotes.map(quote => (
-      <section className='card'style={{backgroundImage: `url('${randomPic()}')`, backgroundColor: 'rgba(0,0,0,0.5)', opacity: '.75'/*add no repeat*/}}>
-        <h2 className='quote'>{quote.body}</h2>
-        <p className='author'>{quote.author}</p>
+      <section className='full-background' style={{backgroundImage: `url('${randomPic()}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
+        <div className='quote-info'>
+          <h2 className='quote'>{quote.body}</h2>
+          <p className='author'>{quote.author}</p>
+        </div>
       </section>
     ))
   }
-
-  // const displayInfo = () => {
-  //   return (
-  //     <section className='card' style={{backgroundImage: `url('${pics[0].largeImageURL}')`, backgroundColor: 'rgba(0,0,0,0.5)', opacity: '.75', repeat: 'none'}}>
-  //       <h2 className='quote'>{quote.body}</h2>
-  //       <p className='author'>{quote.author}</p>
-  //     </section>
-  //   )
-  // }
 
   return (
    
