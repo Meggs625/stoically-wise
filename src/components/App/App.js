@@ -19,6 +19,11 @@ const App = () => {
     localStorage.setItem('chosenTheme', JSON.stringify(theme))
   }
 
+  const retrieveFromStorage = () => {
+    const storedTheme = JSON.parse(localStorage.getItem('chosenTheme'))
+    setChosenTheme(storedTheme)
+  }
+
 
 
   return (
@@ -34,7 +39,10 @@ const App = () => {
             <ThemeForm updateTheme={updateTheme}/> 
           </div>}
         />
-        <Route exact path='/quote' render={() => <Quote theme={chosenTheme} />}
+        <Route exact path='/quote' render={() => 
+          <Quote 
+          theme={chosenTheme} 
+          retrieveFromStorage={retrieveFromStorage}/>}
         />
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
