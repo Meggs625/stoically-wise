@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link} from 'react-router-dom';
 import ThemeForm from '../ThemeForm/ThemeForm';
 import Quote from '../Quote/Quote';
 import Navbar from '../Navbar/Navbar';
