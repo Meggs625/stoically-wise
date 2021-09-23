@@ -21,7 +21,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   }
   const randomPic = () => {
     const randomIndex =  Math.floor(Math.random() * pics.length)
-    return pics[randomIndex].userImageURL
+    return pics[randomIndex].largeImageURL
   }
 
   useEffect(() => {
