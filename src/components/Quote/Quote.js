@@ -30,7 +30,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     }
     fetchData()   
     fetchPhotos()
-  }, [])
+  }, [theme])
 
 
   const displayInfo = () => {
