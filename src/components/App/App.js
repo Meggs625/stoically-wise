@@ -24,6 +24,12 @@ const App = () => {
     setChosenTheme(storedTheme)
   }
 
+  useEffect(() => {
+    if(localStorage) {
+      retrieveFromStorage()
+    }
+  }, [chosenTheme])
+
 
 
   return (
@@ -37,6 +43,8 @@ const App = () => {
               <h2>Choose a theme</h2>
             </div>
             <ThemeForm updateTheme={updateTheme}/> 
+            {chosenTheme && 
+              <button>{`Use previous theme: ${chosenTheme}`}</button>}
           </div>}
         />
         <Route exact path='/quote' render={() => 
