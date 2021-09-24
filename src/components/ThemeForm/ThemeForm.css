@@ -15,3 +15,14 @@ input {
   color: #9B59B6;
   opacity: .75;
 }
+
+.enter-btn {
+  margin-top: 12%;
+  height: 2em;
+  width: 6em;
+  background: white;
+  color: #9B59B6;
+  border: 1px solid #9B59B6;
+  opacity: .75;
+  border-radius: 20px;
+}

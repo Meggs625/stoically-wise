@@ -19,6 +19,8 @@
   height: auto;
   width: auto;
   border-radius: 20px;
+  background: white;
+ margin-top: 10px;
 }
 
 .quote, 
@@ -29,4 +31,5 @@
 
 .quote {
   padding: 15%;
+  font-size: 1.15em;
 }
