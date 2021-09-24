@@ -22,7 +22,9 @@ const ThemeForm = ({ updateTheme }) => {
         onChange={event => setTheme(event.target.value)}        
       />      
       <Link to='/quote'>
-        <button onClick={() => handleClick()}>Enter</button></Link>
+        <button 
+          className='enter-btn'
+          onClick={() => handleClick()}>Enter</button></Link>
     </form>
   )
 

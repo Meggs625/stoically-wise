@@ -1,5 +1,5 @@
 .main-display {
-  height: 86vh;
+  height: 85vh;
   width: 100vw;
 }
 
@@ -10,6 +10,9 @@
   background-repeat: no-repeat;
   background-position: center center;
   opacity: .75;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .quote-info {
@@ -17,8 +20,11 @@
   flex-direction: column;
   align-items: center;
   height: auto;
-  width: auto;
+  width: 80%;
   border-radius: 20px;
+  background: white;
+  opacity: .75;
+  margin-top: 25%;
 }
 
 .quote, 
@@ -28,5 +34,10 @@
 }
 
 .quote {
-  padding: 15%;
+  padding: 10%;
+  font-size: 1.15em;
+}
+
+.author {
+  padding-bottom: 5%;
 }

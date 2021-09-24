@@ -44,7 +44,8 @@ const App = () => {
             </div>
             <ThemeForm updateTheme={updateTheme}/> 
             {chosenTheme && 
-              <Link to='/quote'><button>{`Use previous theme: ${chosenTheme}`}</button></Link>}
+              <Link to='/quote'>
+              <button className='previous-theme-btn'>{`Use previous theme: ${chosenTheme}`}</button></Link>}
           </div>}
         />
         <Route exact path='/quote' render={() => 
@@ -55,8 +56,8 @@ const App = () => {
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
       <footer>
-          <p className='credit'>Images by pixabay</p>
-          <p className='credit'>Quotes from stoic-api</p>
+          <a href='https://pixabay.com/' className='credit'>Images from Pixabay</a>
+          <a href='https://stoic-wisdom.com/api' className='credit'>Quotes from Stoic Wisdom API</a>
       </footer>
     </main>
   );
