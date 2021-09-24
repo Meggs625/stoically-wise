@@ -1,5 +1,5 @@
 .main-display {
-  height: 88vh;
+  height: 85vh;
   width: 100vw;
 }
 
@@ -12,7 +12,7 @@
   opacity: .75;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .quote-info {
@@ -24,6 +24,7 @@
   border-radius: 20px;
   background: white;
   opacity: .75;
+  margin-top: 25%;
 }
 
 .quote, 
