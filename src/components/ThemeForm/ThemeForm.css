@@ -8,7 +8,7 @@ form {
 }
 
 input {
-  height: 20%;
+  height: 15%;
   width:60%;
   border-radius: 16px;
   border: 1px solid #9B59B6;
@@ -25,4 +25,14 @@ input {
   border: 1px solid #9B59B6;
   opacity: .75;
   border-radius: 20px;
+}
+
+@media screen and (min-width: 650px) {
+  form {
+    margin-top: 8%;
+  }
+  input {
+    width: 50%;
+    height: 15%;
+  }
 }
