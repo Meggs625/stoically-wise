@@ -44,7 +44,8 @@ const App = () => {
             </div>
             <ThemeForm updateTheme={updateTheme}/> 
             {chosenTheme && 
-              <Link to='/quote'><button>{`Use previous theme: ${chosenTheme}`}</button></Link>}
+              <Link to='/quote'>
+              <button className='previous-theme-btn'>{`Use previous theme: ${chosenTheme}`}</button></Link>}
           </div>}
         />
         <Route exact path='/quote' render={() => 

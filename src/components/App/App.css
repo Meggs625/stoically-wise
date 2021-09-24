@@ -1,5 +1,5 @@
 .landing-page {
-  height: 80vh;
+  height: 87vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,22 @@
   flex-direction: column;
   align-items: center;
   margin-top: 5%;
+}
+
+.previous-theme-btn {
+  height: 3em;
+  width: auto;
+  background: white;
+  color: #9B59B6;
+  border: 1px solid #9B59B6;
+  opacity: .75;
+  border-radius: 20px;
+}
+
+
+.previous-theme-btn:hover {
+  background: #9B59B6;
+  color: white
 }
 
 footer {
