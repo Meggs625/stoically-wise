@@ -56,8 +56,8 @@ const App = () => {
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
       <footer>
-          <p className='credit'>Images by pixabay</p>
-          <p className='credit'>Quotes from stoic-api</p>
+          <a href='https://pixabay.com/' className='credit'>Images from Pixabay</a>
+          <a href='https://stoic-wisdom.com/api' className='credit'>Quotes from Stoic Wisdom API</a>
       </footer>
     </main>
   );
