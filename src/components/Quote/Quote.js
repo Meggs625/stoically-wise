@@ -52,8 +52,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     ))
   }
 
-  return (
-   
+  return (   
     <section className='main-display' >
       {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
       {pics.length === 0 && <h2>Please try another theme</h2>}
