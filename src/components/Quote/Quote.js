@@ -5,12 +5,14 @@ const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
   const [pics, setPics] = useState([]);
+  const [errorCode, setErrorCode] = useState('')
 
   const fetchData = () => {
-    return fetch('https://stoic-server.herokuapp.com/random', {
+    return fetch('https://stoic-server.herokuapp.com/rand', {
     })
-      .then(res => res.json())
+      .then(res => res.ok ? res.json() : getErrorCode(res))
       .then(data => setQuote(data))
+      .catch(err => console.log(err))
   }
 
   const fetchPhotos = () => {
@@ -32,6 +34,10 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     fetchPhotos()
   }, [theme])
 
+  const getErrorCode = (res) => {
+    const resErrorCode = res.status;
+    setErrorCode(resErrorCode)
+  }
 
   const displayInfo = () => {
     return quotes.map(quote => (
@@ -47,7 +53,8 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   return (
    
     <section className='main-display' >
-      {displayInfo()}
+      {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
+   
     </section>  
     )
 
