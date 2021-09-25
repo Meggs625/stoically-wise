@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
+import PropTypes from 'prop-types';
 
 const Quote = ({ theme, retrieveFromStorage }) => {
 
@@ -56,3 +57,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
 export default Quote;
 
 
+Quote.propTypes = {
+  theme: PropTypes.string,
+  retrieveFromStorage: PropTypes.func.isRequired
+}
