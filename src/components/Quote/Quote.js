@@ -8,7 +8,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   const [errorCode, setErrorCode] = useState('')
 
   const fetchData = () => {
-    return fetch('https://stoic-server.herokuapp.com/rand', {
+    return fetch('https://stoic-server.herokuapp.com/random', {
     })
       .then(res => res.ok ? res.json() : getErrorCode(res))
       .then(data => setQuote(data))
@@ -23,7 +23,9 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   }
   const randomPic = () => {
     const randomIndex =  Math.floor(Math.random() * pics.length)
-    return pics[randomIndex].largeImageURL
+    console.log(randomIndex)
+    console.log(pics)
+    return (pics[randomIndex].largeImageURL)
   }
 
   useEffect(() => {
@@ -53,8 +55,8 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   return (
    
     <section className='main-display' >
-      {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
-   
+      {(errorCode || pics.length === 0) && <h2>Something went wrong. Please refresh and try again</h2> }
+      {(!errorCode && pics.length !== 0) && displayInfo()}
     </section>  
     )
 
