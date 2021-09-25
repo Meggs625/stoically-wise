@@ -44,7 +44,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   const displayInfo = () => {
     return quotes.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${randomPic()}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
-        <div className='quote-info'>
+        <div className='quote-info' key={quote.id}>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
         </div>
@@ -55,7 +55,8 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   return (
    
     <section className='main-display' >
-      {(errorCode || pics.length === 0) && <h2>Something went wrong. Please refresh and try again</h2> }
+      {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
+      {pics.length === 0 && <h2>Please try another theme</h2>}
       {(!errorCode && pics.length !== 0) && displayInfo()}
     </section>  
     )
