@@ -42,9 +42,9 @@
   padding-bottom: 5%;
 }
 
-.lightbulb {
-  height: 2em;
-  width: auto;
+.plus-sign {
+  /* height: 2em;
+  width: auto; */
   cursor: pointer;
 }
 

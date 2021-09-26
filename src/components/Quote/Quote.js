@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Quote.css';
 import unSaved from '../../images/unSaved.png';
 import saved from '../../images/new-purple-light.png';
+import add from '../../images/icons8-add-50.png';
 import PropTypes from 'prop-types';
 
 const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
@@ -111,7 +112,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
-            <button onClick={event => checkForFavorite(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
+            <button onClick={event => checkForFavorite(event)} className='favorite-btn'><img src={add} alt='add to favorites' className='plus-sign rotate-scale-up'/></button>
           </div>     
             <h2 className='quote'>{quote.body}</h2>
             <p className='author'>{quote.author}</p>
@@ -137,3 +138,5 @@ Quote.propTypes = {
   theme: PropTypes.string,
   retrieveThemeFromStorage: PropTypes.func.isRequired
 }
+
+// {favorite ? saved : unSaved}
