@@ -13,16 +13,24 @@
 .brand {
   display: flex;
   padding: 2%;
+  width:50%;
+}
+
+.home-link {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .brand-name {
   font-size: 1em;
   color: #9B59B6;
+ 
 }
 
 .logo {
   height: 2em;
   width: auto;
+  margin-top: 24%;
 }
 
 .links {
@@ -34,6 +42,9 @@
   align-items: flex-end;
 }
 
-a {
+.new-theme, 
+.view-favorites {
   margin: 2%;
+  text-decoration: none;
+  cursor: pointer;
 }
