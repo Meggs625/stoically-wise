@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
-import owlLogo from '../../owl.png';
+import owlLogo from '../../images/owl.png'
 
 const Navbar = () => {
   const location = useLocation();
