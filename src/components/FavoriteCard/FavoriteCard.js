@@ -1,6 +1,8 @@
 import React from 'react';
 import './FavoriteCard.css';
 import deleteIcon from '../../images/delete.png';
+import PropTypes from 'prop-types';
+
 
 const FavoriteCard = ({ id, quote, author, picture, deleteFavorite}) => {
   return (
@@ -20,3 +22,11 @@ const FavoriteCard = ({ id, quote, author, picture, deleteFavorite}) => {
 }
 
 export default FavoriteCard;
+
+FavoriteCard.propTypes = {
+  id: PropTypes.number,
+  quote: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  picture: PropTypes.string,
+  deleteFavorite: PropTypes.func
+}
