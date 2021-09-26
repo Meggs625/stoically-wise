@@ -43,6 +43,11 @@ Cypress.Commands.add('quoteLoad', () => {
   // })
 })
 
+Cypress.Commands.add('addFavorite', () => {
+  cy.get('.plus-sign').should('be.visible').click()
+    .get('.view-favorites').click()
+})
+
 // ***********************************************
 
 // This example commands.js shows you how to
