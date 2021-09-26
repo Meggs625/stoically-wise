@@ -6,12 +6,14 @@ const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
   const [pics, setPics] = useState([]);
+  const [errorCode, setErrorCode] = useState('')
 
   const fetchData = () => {
     return fetch('https://stoic-server.herokuapp.com/random', {
     })
-      .then(res => res.json())
+      .then(res => res.ok ? res.json() : getErrorCode(res))
       .then(data => setQuote(data))
+      .catch(err => console.log(err))
   }
 
   const fetchPhotos = () => {
@@ -22,7 +24,9 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   }
   const randomPic = () => {
     const randomIndex =  Math.floor(Math.random() * pics.length)
-    return pics[randomIndex].largeImageURL
+    console.log(randomIndex)
+    console.log(pics)
+    return (pics[randomIndex].largeImageURL)
   }
 
   useEffect(() => {
@@ -33,11 +37,15 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     fetchPhotos()
   }, [theme])
 
+  const getErrorCode = (res) => {
+    const resErrorCode = res.status;
+    setErrorCode(resErrorCode)
+  }
 
   const displayInfo = () => {
     return quotes.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${randomPic()}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
-        <div className='quote-info'>
+        <div className='quote-info' key={quote.id}>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
         </div>
@@ -45,10 +53,11 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     ))
   }
 
-  return (
-   
+  return (   
     <section className='main-display' >
-      {displayInfo()}
+      {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
+      {pics.length === 0 && <h2>Please try another theme</h2>}
+      {(!errorCode && pics.length !== 0) && displayInfo()}
     </section>  
     )
 

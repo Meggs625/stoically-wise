@@ -50,6 +50,7 @@ const App = () => {
         />
         <Route exact path='/quote' render={() => 
           <Quote 
+          key={Date.now()}
           theme={chosenTheme} 
           retrieveFromStorage={retrieveFromStorage}/>}
         />

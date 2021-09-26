@@ -8,7 +8,7 @@ const ThemeForm = ({ updateTheme }) => {
 
   const [theme, setTheme] = useState('')
 
-  const handleClick = () => {
+  const handleClick = () => {    
     updateTheme(theme)
   }
 
@@ -20,7 +20,7 @@ const ThemeForm = ({ updateTheme }) => {
         placeholder='Ex: forest, bird, flowers...'
         name='Theme'
         value={theme}
-        onChange={event => setTheme(event.target.value)}        
+        onChange={event => setTheme(event.target.value)} 
       />      
       <Link to='/quote'>
         <button 
