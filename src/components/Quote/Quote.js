@@ -4,7 +4,7 @@ import unSaved from '../../images/unSavedBulb.png';
 import saved from '../../images/savedBulb.png';
 import PropTypes from 'prop-types';
 
-const Quote = ({ theme, retrieveFromStorage }) => {
+const Quote = ({ theme, retrieveThemeFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
   const [favorite, setFavorite] = useState(false);
@@ -34,15 +34,19 @@ const Quote = ({ theme, retrieveFromStorage }) => {
 
   useEffect(() => {
     if(!theme) {
-      retrieveFromStorage()
+      retrieveThemeFromStorage()
     }
     fetchData()   
     fetchPhotos()
+    retrieveFavoritesFromStorage()
   }, [theme])
 
-  // useEffect(() => {
-  //   fetchPhotos()
-  // }, [quotes])
+  const retrieveFavoritesFromStorage = () => {
+    const retreivedFavorites = JSON.parse(localStorage.getItem('favorites'))
+    if(retreivedFavorites) {
+      setFavorites(retreivedFavorites)
+    }
+  }
 
   const toggleFavorites = event => {
     event.preventDefault();
@@ -54,7 +58,11 @@ const Quote = ({ theme, retrieveFromStorage }) => {
       addToFavorites()
     }
     toggleImage()
-    console.log(favorites)
+    updateStorage();
+  }
+
+  const updateStorage = () => {
+    localStorage.setItem('favorites', JSON.stringify(favorites))
   }
 
   const addToFavorites = () => {
@@ -111,5 +119,5 @@ export default Quote;
 
 Quote.propTypes = {
   theme: PropTypes.string,
-  retrieveFromStorage: PropTypes.func.isRequired
+  retrieveThemeFromStorage: PropTypes.func.isRequired
 }
