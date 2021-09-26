@@ -12,12 +12,12 @@ const Navbar = () => {
           <img src={owlLogo} alt='owl logo' className='logo'/>
           <h1 className='brand-name'>Daily Wisdom</h1>
         </div>
-      </Link>
-      {location.pathname === '/quote' && 
+      </Link>      
         <div className='links'>
-          <Link to='/' className='new-theme'>Select New Theme</Link>
+          {(location.pathname === '/quote' || location.pathname === '/favorites')
+           && <Link to='/' className='new-theme'>Select New Theme</Link>}
           <Link to='/favorites' className='view-favorites'>View Favorites</Link>      
-        </div>}
+        </div>
     </section>
   )
 }
