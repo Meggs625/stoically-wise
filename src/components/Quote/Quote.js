@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
-import unSaved from '../../images/unSavedBulb.png';
-import saved from '../../images/savedBulb.png';
+import unSaved from '../../images/icons8-light-on-48.png';
+import saved from '../../images/new-purple-light.png';
 import PropTypes from 'prop-types';
 
 const Quote = ({ theme, retrieveThemeFromStorage }) => {
