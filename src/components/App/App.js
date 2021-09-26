@@ -31,21 +31,21 @@ const App = () => {
     if(localStorage) {
       retrieveThemeFromStorage()
     }
-    // retrieveFavoritesFromStorage()
+    retrieveFavoritesFromStorage()
   }, [chosenTheme])
 
   // useEffect(() => {
   //   retrieveFavoritesFromStorage()
   // }, [favorites])
 
-  // const retrieveFavoritesFromStorage = () => {
-  //   const retreivedFavorites = 
-  //     Object.keys(localStorage).filter(key => key !== 'chosenTheme')
-  //       .map(item => JSON.parse(localStorage.getItem(item)))
-  //   if(retreivedFavorites) {
-  //     setFavorites(retreivedFavorites)
-  //   }
-  // }
+  const retrieveFavoritesFromStorage = () => {
+    const retreivedFavorites = 
+      Object.keys(localStorage).filter(key => key !== 'chosenTheme')
+        .map(item => JSON.parse(localStorage.getItem(item)))
+    if(retreivedFavorites) {
+      setFavorites(retreivedFavorites)
+    }
+  }
 
   const toggleFavorites = (newFavorite) => {
     console.log(newFavorite, 'newFavorite')
