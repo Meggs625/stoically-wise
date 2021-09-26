@@ -4,12 +4,12 @@ import unSaved from '../../images/unSavedBulb.png';
 import saved from '../../images/savedBulb.png';
 import PropTypes from 'prop-types';
 
-const Quote = ({ theme, retrieveFromStorage, addToFavorites }) => {
+const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
-  // const [pics, setPics] = useState([]);
   const [favorite, setFavorite] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState({})
+  const [currentPhoto, setCurrentPhoto] = useState({});
+  const [favorites, setFavorites] = useState([]);
 
   const fetchData = () => {
     return fetch('https://stoic-server.herokuapp.com/random', {
@@ -42,14 +42,18 @@ const Quote = ({ theme, retrieveFromStorage, addToFavorites }) => {
   //   fetchPhotos()
   // }, [quotes])
 
-  const toggleImage = event => {
+  const addToFavorites = event => {
     event.preventDefault();
     const newFavorite = {
+      id: Date.now(),
       quotes,
       currentPhoto
     }
+    toggleImage()
+    setFavorites([...favorites, newFavorite])
+  }
 
-    addToFavorites(newFavorite)
+  const toggleImage = () => {
     setFavorite(!favorite)
   }
 
@@ -59,7 +63,7 @@ const Quote = ({ theme, retrieveFromStorage, addToFavorites }) => {
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info'>
           <div className='favorite-container'>
-            <button onClick={event => toggleImage(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
+            <button onClick={event => addToFavorites(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
           </div>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
