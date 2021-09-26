@@ -29,7 +29,7 @@ describe('Landing Page', () => {
     .type('butterflies')
     .should('have.value', 'butterflies')
     .get('.enter-btn').click()
-    .get('.new-theme-link').click()
+    .get('.new-theme').click()
     .get('.previous-theme-btn').should('contain', 'butterflies')
   })
 
