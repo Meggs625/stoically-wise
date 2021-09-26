@@ -19,14 +19,14 @@ const App = () => {
     localStorage.setItem('chosenTheme', JSON.stringify(theme))
   }
 
-  const retrieveFromStorage = () => {
+  const retrieveThemeFromStorage = () => {
     const storedTheme = JSON.parse(localStorage.getItem('chosenTheme'))
     setChosenTheme(storedTheme)
   }
 
   useEffect(() => {
     if(localStorage) {
-      retrieveFromStorage()
+      retrieveThemeFromStorage()
     }
   }, [chosenTheme])
 
@@ -52,7 +52,7 @@ const App = () => {
           <Quote 
           key={Date.now()}
           theme={chosenTheme} 
-          retrieveFromStorage={retrieveFromStorage}/>}
+          retrieveThemeFromStorage={retrieveThemeFromStorage}/>}
         />
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 

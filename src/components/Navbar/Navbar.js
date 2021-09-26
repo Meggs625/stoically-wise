@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
-import owlLogo from '../../owl.png';
+import owlLogo from '../../images/owl.png'
 
 const Navbar = () => {
   const location = useLocation();
@@ -12,7 +12,10 @@ const Navbar = () => {
         <h1 className='brand-name'>Daily Wisdom</h1>
       </div>
       {location.pathname === '/quote' && 
-        <Link to='/' className='new-theme-link'>Select New Theme</Link>}
+        <div className='links'>
+          <Link to='/'>Select New Theme</Link>
+          <Link to='/favorites'>View Favorites</Link>      
+        </div>}
     </section>
   )
 }
