@@ -5,10 +5,10 @@ import saved from '../../images/new-purple-light.png';
 import add from '../../images/icons8-add-50.png';
 import PropTypes from 'prop-types';
 
-const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
+const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
 
   const [quotes, setQuote] = useState([]);
-  const [favorite, setFavorite] = useState(false);
+  // const [favorite, setFavorite] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState('');
   // const [favorites, setFavorites] = useState([]);
   const [errorCode, setErrorCode] = useState('')
@@ -62,7 +62,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
   //   // updateStorage();
   // }
 
-  const checkForFavorite = event => {
+  const createFavorite = event => {
     event.preventDefault();
     const newFavorite = {
       id: quotes[0].id,
@@ -70,8 +70,8 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
       author: quotes[0].author,
       currentPhoto
     }
-    toggleImage();
-    toggleFavorites(newFavorite);
+    // toggleImage();
+    addToFavorites(newFavorite);
   }
 
   // const updateStorage = () => {
@@ -96,10 +96,10 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
   //   localStorage.removeItem(quotes[0].id)
   // }
 
-  const toggleImage = () => {
-    console.log('toggling')
-    setFavorite(!favorite)
-  }
+  // const toggleImage = () => {
+  //   console.log('toggling')
+  //   setFavorite(!favorite)
+  // }
 
   const getErrorCode = (res) => {
     const resErrorCode = res.status;
@@ -112,7 +112,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
-            <button onClick={event => checkForFavorite(event)} className='favorite-btn'><img src={add} alt='add to favorites' className='plus-sign rotate-scale-up'/></button>
+            <button onClick={event => createFavorite(event)} className='favorite-btn'><img src={add} alt='add to favorites' className='plus-sign rotate-scale-up'/></button>
           </div>     
             <h2 className='quote'>{quote.body}</h2>
             <p className='author'>{quote.author}</p>

@@ -47,17 +47,17 @@ const App = () => {
     }
   }
 
-  const toggleFavorites = (newFavorite) => {
-    console.log(newFavorite, 'newFavorite')
-    const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.id)
-    if(locatedQuote) {
-      deleteFavorite(newFavorite)
-    } else {
-      addToFavorites(newFavorite)
-    }
-    // toggleImage()
-    // updateStorage();
-  }
+  // const toggleFavorites = (newFavorite) => {
+  //   console.log(newFavorite, 'newFavorite')
+  //   const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.id)
+  //   if(locatedQuote) {
+  //     deleteFavorite(newFavorite)
+  //   } else {
+  //     addToFavorites(newFavorite)
+  //   }
+  //   // toggleImage()
+  //   // updateStorage();
+  // }
 
 
   const addToFavorites = (newFavorite) => {
@@ -98,7 +98,7 @@ const App = () => {
           key={Date.now()}
           theme={chosenTheme} 
           retrieveThemeFromStorage={retrieveThemeFromStorage}
-          toggleFavorites={toggleFavorites}/>}
+          addToFavorites={addToFavorites}/>}
         />
         <Route exact path='/favorites' render={() => 
           <FavoritesContainer 
