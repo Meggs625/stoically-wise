@@ -1,25 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import './FavoritesContainer.css';
 
-const FavoritesContainer = () => {
+const FavoritesContainer = ({ allFavorites }) => {
 
-  // const [favorites, setFavorites] = useState([])
-
-  // useEffect(() => {
-  //   retrieveFavoritesFromStorage()
-  // },[])
-
-  // const retrieveFavoritesFromStorage = () => {
-  //   const retreivedFavorites = 
-  //     Object.keys(localStorage).filter(key => key !== 'chosenTheme')
-  //       .map(item => JSON.parse(localStorage.getItem(item)))
-  //   if(retreivedFavorites) {
-  //     setFavorites(retreivedFavorites)
-  //   }
-  // }
+  const showFavorites = allFavorites.map(favorite => console.log(favorite))
 
   return (
-    <h1>Yip yip</h1>
+    <h1>{showFavorites}}</h1>
   )
 
 }

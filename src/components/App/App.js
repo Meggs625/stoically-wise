@@ -101,7 +101,8 @@ const App = () => {
           toggleFavorites={toggleFavorites}/>}
         />
         <Route exact path='/favorites' render={() => 
-          <FavoritesContainer />
+          <FavoritesContainer 
+            allFavorites={favorites}/>
         }/>
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
