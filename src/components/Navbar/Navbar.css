@@ -25,7 +25,15 @@
   width: auto;
 }
 
-.new-theme-link {
+.links {
   font-size: .75em;
   margin-right: 6%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-end;
+}
+
+a {
+  margin: 2%;
 }

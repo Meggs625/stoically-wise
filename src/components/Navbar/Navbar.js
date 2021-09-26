@@ -12,7 +12,10 @@ const Navbar = () => {
         <h1 className='brand-name'>Daily Wisdom</h1>
       </div>
       {location.pathname === '/quote' && 
-        <Link to='/' className='new-theme-link'>Select New Theme</Link>}
+        <div className='links'>
+          <Link to='/'>Select New Theme</Link>
+          <Link to='/favorites'>View Favorites</Link>      
+        </div>}
     </section>
   )
 }
