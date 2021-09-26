@@ -4,7 +4,7 @@ import unSaved from '../../images/unSavedBulb.png';
 import saved from '../../images/savedBulb.png';
 import PropTypes from 'prop-types';
 
-const Quote = ({ theme, retrieveFromStorage }) => {
+const Quote = ({ theme, retrieveFromStorage, addToFavorites }) => {
 
   const [quotes, setQuote] = useState([]);
   // const [pics, setPics] = useState([]);
@@ -43,7 +43,13 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   // }, [quotes])
 
   const toggleImage = event => {
-    event.preventDefault()
+    event.preventDefault();
+    const newFavorite = {
+      quotes,
+      currentPhoto
+    }
+
+    addToFavorites(newFavorite)
     setFavorite(!favorite)
   }
 
