@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
+import unSaved from '../../images/unSavedBulb.png';
+import saved from '../../images/savedBulb.png';
 import PropTypes from 'prop-types';
 
 const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
   const [pics, setPics] = useState([]);
+  const [favorite, setFavorite] = useState(false)
 
   const fetchData = () => {
     return fetch('https://stoic-server.herokuapp.com/random', {
@@ -33,12 +36,17 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     fetchPhotos()
   }, [theme])
 
+  const toggleImage = event => {
+    event.preventDefault()
+    setFavorite(!favorite)
+  }
+
 
   const displayInfo = () => {
     return quotes.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${randomPic()}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info'>
-          
+          <button onClick={event => toggleImage(event)}><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='favorite-btn'/></button>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
         </div>
