@@ -12,7 +12,6 @@ const ThemeForm = ({ updateTheme }) => {
     updateTheme(theme)
   }
 
-
   return (
     <form>
       <input
@@ -28,7 +27,6 @@ const ThemeForm = ({ updateTheme }) => {
           onClick={() => handleClick()}>Enter</button></Link>
     </form>
   )
-
 }
 
 export default ThemeForm;
