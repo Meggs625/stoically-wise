@@ -8,7 +8,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
   const [favorite, setFavorite] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState({});
+  const [currentPhoto, setCurrentPhoto] = useState('');
   const [favorites, setFavorites] = useState([]);
   const [errorCode, setErrorCode] = useState('')
 
@@ -30,8 +30,6 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   const randomPic = (allPics) => {
     const randomIndex =  Math.floor(Math.random() * allPics.length)
     setCurrentPhoto(allPics[randomIndex].largeImageURL)
-
-
   }
 
   useEffect(() => {
@@ -48,16 +46,22 @@ const Quote = ({ theme, retrieveFromStorage }) => {
 
   const toggleFavorites = event => {
     event.preventDefault();
-    // const foundFavorite = favorites.find(item => item.id ===)
+    const locatedQuote = favorites.find(favorite => favorite.id === quotes[0].id)
+
+    if(locatedQuote) {
+      deleteFavorite()
+    } else {
+      addToFavorites()
+    }
     toggleImage()
-    addToFavorites()
     console.log(favorites)
   }
 
   const addToFavorites = () => {
     const newFavorite = {
-      id: Date.now(),
-      quotes,
+      id: quotes[0].id,
+      quote: quotes[0].body,
+      author: quotes[0].author,
       currentPhoto
     }
     setFavorites([...favorites, newFavorite])
@@ -94,8 +98,8 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   return (   
     <section className='main-display' >
       {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
-      {pics.length === 0 && <h2>Please try another theme</h2>}
-      {(!errorCode && pics.length !== 0) && displayInfo()}
+      {!currentPhoto && <h2>Please try another theme</h2>}
+      {(!errorCode && currentPhoto) && displayInfo()}
     </section>  
     )
 
