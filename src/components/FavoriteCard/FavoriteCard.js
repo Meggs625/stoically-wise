@@ -2,11 +2,11 @@ import React from 'react';
 import './FavoriteCard.css';
 import deleteIcon from '../../images/delete.png'
 
-const FavoriteCard = ({ id, quote, author, picture}) => {
+const FavoriteCard = ({ id, quote, author, picture, deleteFavorite}) => {
   return (
     <section className='card'> 
         <div className='delete-container'>
-          <button className='delete-btn rotate-scale-up'><img src={deleteIcon} alt='delete button' className='delete-icon'/></button>
+          <button className='delete-btn rotate-scale-up' onClick={() => deleteFavorite(id)}><img src={deleteIcon} alt='delete button' className='delete-icon'/></button>
         </div>
       <div className='img-container'>      
         <img src={picture} alt='selected theme' className='saved-img'/>

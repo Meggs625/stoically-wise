@@ -71,10 +71,10 @@ const App = () => {
     setFavorites([...favorites, newFavorite])
   }
 
-  const deleteFavorite = (newFavorite) => {
-    const keptFavorites = favorites.filter(favorite => favorite.id !== newFavorite.id)
+  const deleteFavorite = (id) => {
+    const keptFavorites = favorites.filter(favorite => favorite.id !== id)
     setFavorites(keptFavorites)
-    localStorage.removeItem(newFavorite.id)
+    localStorage.removeItem(id)
   }
 
   return (
@@ -102,7 +102,8 @@ const App = () => {
         />
         <Route exact path='/favorites' render={() => 
           <FavoritesContainer 
-            allFavorites={favorites}/>
+            allFavorites={favorites}
+            deleteFavorite={deleteFavorite}/>
         }/>
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
