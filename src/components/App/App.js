@@ -3,11 +3,14 @@ import { Route, Switch, Link} from 'react-router-dom';
 import ThemeForm from '../ThemeForm/ThemeForm';
 import Quote from '../Quote/Quote';
 import Navbar from '../Navbar/Navbar';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer'
 import './App.css';
 
 const App = () => {
 
   const [chosenTheme, setChosenTheme] = useState('');
+  const [favorites, setFavorites] = useState([]);
+
 
 
   const updateTheme = (inputTheme) => {
@@ -28,9 +31,51 @@ const App = () => {
     if(localStorage) {
       retrieveThemeFromStorage()
     }
+    retrieveFavoritesFromStorage()
   }, [chosenTheme])
 
+  // useEffect(() => {
+  //   retrieveFavoritesFromStorage()
+  // }, [favorites])
 
+  const retrieveFavoritesFromStorage = () => {
+    const retreivedFavorites = 
+      Object.keys(localStorage).filter(key => key !== 'chosenTheme')
+        .map(item => JSON.parse(localStorage.getItem(item)))
+    if(retreivedFavorites) {
+      setFavorites(retreivedFavorites)
+    }
+  }
+
+  // const toggleFavorites = (newFavorite) => {
+  //   console.log(newFavorite, 'newFavorite')
+  //   const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.id)
+  //   if(locatedQuote) {
+  //     deleteFavorite(newFavorite)
+  //   } else {
+  //     addToFavorites(newFavorite)
+  //   }
+  //   // toggleImage()
+  //   // updateStorage();
+  // }
+
+
+  const addToFavorites = (newFavorite) => {
+    // const newFavorite = {
+    //   id: quotes[0].id,
+    //   quote: quotes[0].body,
+    //   author: quotes[0].author,
+    //   currentPhoto
+    // }
+    localStorage.setItem(newFavorite.id, JSON.stringify(newFavorite))
+    setFavorites([...favorites, newFavorite])
+  }
+
+  const deleteFavorite = (id) => {
+    const keptFavorites = favorites.filter(favorite => favorite.id !== id)
+    setFavorites(keptFavorites)
+    localStorage.removeItem(id)
+  }
 
   return (
     <main>
@@ -52,8 +97,14 @@ const App = () => {
           <Quote 
           key={Date.now()}
           theme={chosenTheme} 
-          retrieveThemeFromStorage={retrieveThemeFromStorage}/>}
+          retrieveThemeFromStorage={retrieveThemeFromStorage}
+          addToFavorites={addToFavorites}/>}
         />
+        <Route exact path='/favorites' render={() => 
+          <FavoritesContainer 
+            allFavorites={favorites}
+            deleteFavorite={deleteFavorite}/>
+        }/>
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
       <footer>
