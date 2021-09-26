@@ -46,7 +46,9 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     return quotes.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${randomPic()}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info'>
-          <button onClick={event => toggleImage(event)}><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='favorite-btn'/></button>
+          <div className='favorite-container'>
+            <button onClick={event => toggleImage(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb'/></button>
+          </div>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
         </div>

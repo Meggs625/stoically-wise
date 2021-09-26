@@ -42,8 +42,21 @@
   padding-bottom: 5%;
 }
 
-.favorite-btn {
-  height: 1.5em;
+.lightbulb {
+  height: 2em;
   width: auto;
+}
+
+.favorite-btn {
+  background: transparent;
+  border: none;
+}
+
+.favorite-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 4%;
+  background: transparent;
 }
 /* <a target="_blank" href="https://icons8.com/icon/A0JtKOyp9fqT/lightbulb">Lightbulb</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
