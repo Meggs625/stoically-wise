@@ -26,7 +26,6 @@
   border-radius: 20px;
 }
 
-
 .previous-theme-btn:hover {
   background: #9B59B6;
   color: white
@@ -43,6 +42,7 @@ footer {
   padding: 0% 5%;
   color:#9B59B6
 }
+
 .credit {
   margin: 2%;
 }
