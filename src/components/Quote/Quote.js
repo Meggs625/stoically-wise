@@ -42,45 +42,51 @@ const Quote = ({ theme, retrieveThemeFromStorage }) => {
   }, [theme])
 
   const retrieveFavoritesFromStorage = () => {
-    const retreivedFavorites = JSON.parse(localStorage.getItem('favorites'))
+    const retreivedFavorites = 
+      Object.keys(localStorage).filter(key => key !== 'chosenTheme')
+        .map(item => JSON.parse(localStorage.getItem(item)))
     if(retreivedFavorites) {
       setFavorites(retreivedFavorites)
     }
   }
 
-  const toggleFavorites = event => {
-    event.preventDefault();
+  const toggleFavorites = () => {
     const locatedQuote = favorites.find(favorite => favorite.id === quotes[0].id)
-
     if(locatedQuote) {
       deleteFavorite()
     } else {
       addToFavorites()
     }
     toggleImage()
-    updateStorage();
+    // updateStorage();
   }
 
-  const updateStorage = () => {
-    localStorage.setItem('favorites', JSON.stringify(favorites))
-  }
+  // const updateStorage = () => {
+  //   console.log('updating')
+  //   localStorage.setItem('favorites', JSON.stringify(favorites))
+  // }
 
   const addToFavorites = () => {
+    console.log('adding')
     const newFavorite = {
       id: quotes[0].id,
       quote: quotes[0].body,
       author: quotes[0].author,
       currentPhoto
     }
+    localStorage.setItem(newFavorite.id, JSON.stringify(newFavorite))
     setFavorites([...favorites, newFavorite])
   }
 
   const deleteFavorite = () => {
+    console.log('deleting')
     const keptFavorites = favorites.filter(favorite => favorite.id !== quotes[0].id)
     setFavorites(keptFavorites)
+    localStorage.removeItem(quotes[0].id)
   }
 
   const toggleImage = () => {
+    console.log('toggling')
     setFavorite(!favorite)
   }
 
@@ -95,7 +101,7 @@ const Quote = ({ theme, retrieveThemeFromStorage }) => {
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
-            <button onClick={event => toggleFavorites(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
+            <button onClick={event => toggleFavorites()} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
           </div>     
             <h2 className='quote'>{quote.body}</h2>
             <p className='author'>{quote.author}</p>
