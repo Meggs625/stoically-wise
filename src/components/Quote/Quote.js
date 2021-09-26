@@ -10,12 +10,14 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   const [favorite, setFavorite] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState({});
   const [favorites, setFavorites] = useState([]);
+  const [errorCode, setErrorCode] = useState('')
 
   const fetchData = () => {
     return fetch('https://stoic-server.herokuapp.com/random', {
     })
-      .then(res => res.json())
+      .then(res => res.ok ? res.json() : getErrorCode(res))
       .then(data => setQuote(data))
+      .catch(err => console.log(err))
   }
 
   const fetchPhotos = () => {
@@ -28,6 +30,8 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   const randomPic = (allPics) => {
     const randomIndex =  Math.floor(Math.random() * allPics.length)
     setCurrentPhoto(allPics[randomIndex].largeImageURL)
+
+
   }
 
   useEffect(() => {
@@ -67,25 +71,31 @@ const Quote = ({ theme, retrieveFromStorage }) => {
     setFavorite(!favorite)
   }
 
+  const getErrorCode = (res) => {
+    const resErrorCode = res.status;
+    setErrorCode(resErrorCode)
+  }
+
 
   const displayInfo = () => {
     return quotes.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
-        <div className='quote-info'>
+        <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
             <button onClick={event => toggleFavorites(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
-          </div>
-          <h2 className='quote'>{quote.body}</h2>
-          <p className='author'>{quote.author}</p>
+          </div>     
+            <h2 className='quote'>{quote.body}</h2>
+            <p className='author'>{quote.author}</p>
         </div>
       </section>
     ))
   }
 
-  return (
-   
+  return (   
     <section className='main-display' >
-      {displayInfo()}
+      {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
+      {pics.length === 0 && <h2>Please try another theme</h2>}
+      {(!errorCode && pics.length !== 0) && displayInfo()}
     </section>  
     )
 
