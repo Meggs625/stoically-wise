@@ -41,8 +41,16 @@
 }
 
 .new-theme, 
-.view-favorites {
+.view-favorites,
+.view-quotes {
   margin: 2%;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 725px) {
+  .links {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
