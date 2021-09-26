@@ -15,7 +15,10 @@ const FavoritesContainer = ({ allFavorites, deleteFavorite }) => {
       />)
 
   return (
-    <h1>{showFavorites}</h1>
+    <section className='favorites-display'>
+    {allFavorites.length === 0 && <section className='no-favorites'><h1>Nothing saved yet. Find some quotes to save!</h1> </section>}
+    {showFavorites}
+    </section>
   )
 
 }
