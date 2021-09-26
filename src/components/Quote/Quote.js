@@ -42,15 +42,25 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   //   fetchPhotos()
   // }, [quotes])
 
-  const addToFavorites = event => {
+  const toggleFavorites = event => {
     event.preventDefault();
+    // const foundFavorite = favorites.find(item => item.id ===)
+    toggleImage()
+    addToFavorites()
+    console.log(favorites)
+  }
+
+  const addToFavorites = () => {
     const newFavorite = {
       id: Date.now(),
       quotes,
       currentPhoto
     }
-    toggleImage()
     setFavorites([...favorites, newFavorite])
+  }
+
+  const deleteFavorite = () => {
+
   }
 
   const toggleImage = () => {
@@ -63,7 +73,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info'>
           <div className='favorite-container'>
-            <button onClick={event => addToFavorites(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
+            <button onClick={event => toggleFavorites(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
           </div>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
