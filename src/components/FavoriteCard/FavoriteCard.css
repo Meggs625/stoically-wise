@@ -1,7 +1,10 @@
 .card {
-  height: 200px;
-  width: auto;
+  height: 15vh;
+  width: 90vw;
   display: flex;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .saved-quote {
@@ -10,4 +13,30 @@
 
 .saved-author {
   font-size: .25em;
+}
+
+.img-container {
+  height: 30%;
+  width: 30%
+}
+
+/* .saved-img {
+  height: 30%;
+  width: 100%;
+} */
+
+.delete-container {
+  display: flex;
+  justify-content: flex-end;
+  margin:auto;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+}
+
+.delete-icon {
+  height: 1em;
+  width: auto;
 }
