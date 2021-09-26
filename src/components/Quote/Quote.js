@@ -68,7 +68,8 @@ const Quote = ({ theme, retrieveFromStorage }) => {
   }
 
   const deleteFavorite = () => {
-
+    const keptFavorites = favorites.filter(favorite => favorite.id !== quotes[0].id)
+    setFavorites(keptFavorites)
   }
 
   const toggleImage = () => {
