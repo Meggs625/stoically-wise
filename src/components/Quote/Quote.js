@@ -107,8 +107,8 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
   }
 
 
-  const displayInfo = (data) => {
-    return data.map(quote => (
+  const displayInfo = () => {
+    return quotes.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
@@ -125,7 +125,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
     <section className='main-display' >
       {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
       {!currentPhoto && <h2>Please try another theme</h2>}
-      {(!errorCode && currentPhoto) && displayInfo(quotes)}
+      {(!errorCode && currentPhoto) && displayInfo()}
     </section>  
     )
 
