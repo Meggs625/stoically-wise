@@ -43,10 +43,10 @@ Cypress.Commands.add('quoteLoad', () => {
   // })
 })
 
-Cypress.Commands.add('addFavorite', () => {
-  cy.get('.plus-sign').should('be.visible').click()
-    .get('.view-favorites').click()
-})
+// Cypress.Commands.add('addFavorite', () => {
+//   cy.get('.plus-sign').should('be.visible').click()
+//     .get('.view-favorites').click()
+// })
 
 // ***********************************************
 

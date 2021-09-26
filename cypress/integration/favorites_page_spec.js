@@ -1,7 +1,8 @@
 describe('Favorites Page', () => {
   beforeEach(() => {
     cy.quoteLoad()
-    cy.addFavorite()
+    .get('.plus-sign').should('be.visible').click()
+    .get('.view-favorites').click()
   })
 
   it('Should include have an updated URL', () => {
@@ -37,4 +38,13 @@ describe('Favorites Page', () => {
     cy.get('.delete-icon').click()
       .get('.no-favorites').should('be.visible').should('contain', 'Nothing saved yet')
   })
+
+  it('Should return to the home page after clicking the logo', () => {
+    cy.get('.home-link').click()
+      .get('.welcome-header').should('be.visible')
+  })
+
+  it('Should display the recently used theme in the lower button', () => [
+    cy.get('.previous-theme-btn').should('contin', 'flowers')
+  ])
 })
