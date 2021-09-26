@@ -31,20 +31,25 @@ const App = () => {
     if(localStorage) {
       retrieveThemeFromStorage()
     }
-    retrieveFavoritesFromStorage()
+    // retrieveFavoritesFromStorage()
   }, [chosenTheme])
 
-  const retrieveFavoritesFromStorage = () => {
-    const retreivedFavorites = 
-      Object.keys(localStorage).filter(key => key !== 'chosenTheme')
-        .map(item => JSON.parse(localStorage.getItem(item)))
-    if(retreivedFavorites) {
-      setFavorites(retreivedFavorites)
-    }
-  }
+  // useEffect(() => {
+  //   retrieveFavoritesFromStorage()
+  // }, [favorites])
+
+  // const retrieveFavoritesFromStorage = () => {
+  //   const retreivedFavorites = 
+  //     Object.keys(localStorage).filter(key => key !== 'chosenTheme')
+  //       .map(item => JSON.parse(localStorage.getItem(item)))
+  //   if(retreivedFavorites) {
+  //     setFavorites(retreivedFavorites)
+  //   }
+  // }
 
   const toggleFavorites = (newFavorite) => {
-    const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.quotes[0].id)
+    console.log(newFavorite, 'newFavorite')
+    const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.id)
     if(locatedQuote) {
       deleteFavorite(newFavorite)
     } else {
@@ -67,9 +72,9 @@ const App = () => {
   }
 
   const deleteFavorite = (newFavorite) => {
-    const keptFavorites = favorites.filter(favorite => favorite.id !== newFavorite.quotes[0].id)
+    const keptFavorites = favorites.filter(favorite => favorite.id !== newFavorite.id)
     setFavorites(keptFavorites)
-    localStorage.removeItem(newFavorite.quotes[0].id)
+    localStorage.removeItem(newFavorite.id)
   }
 
   return (

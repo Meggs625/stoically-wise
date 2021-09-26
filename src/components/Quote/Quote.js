@@ -61,16 +61,16 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
   //   // updateStorage();
   // }
 
-  const checkForFavorite = () => {
+  const checkForFavorite = event => {
+    event.preventDefault();
     const newFavorite = {
       id: quotes[0].id,
       quote: quotes[0].body,
       author: quotes[0].author,
       currentPhoto
     }
-
-    toggleFavorites(newFavorite);
     toggleImage();
+    toggleFavorites(newFavorite);
   }
 
   // const updateStorage = () => {
@@ -106,12 +106,12 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
   }
 
 
-  const displayInfo = () => {
-    return quotes.map(quote => (
+  const displayInfo = (data) => {
+    return data.map(quote => (
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
-            <button onClick={event => checkForFavorite()} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
+            <button onClick={event => checkForFavorite(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
           </div>     
             <h2 className='quote'>{quote.body}</h2>
             <p className='author'>{quote.author}</p>
@@ -124,7 +124,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, toggleFavorites }) => {
     <section className='main-display' >
       {errorCode && <h2>Something went wrong. Please refresh and try again</h2> }
       {!currentPhoto && <h2>Please try another theme</h2>}
-      {(!errorCode && currentPhoto) && displayInfo()}
+      {(!errorCode && currentPhoto) && displayInfo(quotes)}
     </section>  
     )
 
