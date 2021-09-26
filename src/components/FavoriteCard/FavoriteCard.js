@@ -3,7 +3,13 @@ import './FavoriteCard.css';
 
 const FavoriteCard = ({ id, quote, author, picture}) => {
   return (
-    <h1>{quote}</h1>
+    <section>
+      <img src={picture} alt='selected theme' />
+      <div>
+        <p>{quote}</p>
+        <p>{author}</p>
+      </div>
+    </section>
   )
 }
 
