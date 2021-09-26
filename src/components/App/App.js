@@ -9,6 +9,8 @@ import './App.css';
 const App = () => {
 
   const [chosenTheme, setChosenTheme] = useState('');
+  const [favorites, setFavorites] = useState([]);
+
 
 
   const updateTheme = (inputTheme) => {
@@ -29,9 +31,46 @@ const App = () => {
     if(localStorage) {
       retrieveThemeFromStorage()
     }
+    retrieveFavoritesFromStorage()
   }, [chosenTheme])
 
+  const retrieveFavoritesFromStorage = () => {
+    const retreivedFavorites = 
+      Object.keys(localStorage).filter(key => key !== 'chosenTheme')
+        .map(item => JSON.parse(localStorage.getItem(item)))
+    if(retreivedFavorites) {
+      setFavorites(retreivedFavorites)
+    }
+  }
 
+  const toggleFavorites = (newFavorite) => {
+    const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.quotes[0].id)
+    if(locatedQuote) {
+      deleteFavorite(newFavorite)
+    } else {
+      addToFavorites(newFavorite)
+    }
+    // toggleImage()
+    // updateStorage();
+  }
+
+
+  const addToFavorites = (newFavorite) => {
+    // const newFavorite = {
+    //   id: quotes[0].id,
+    //   quote: quotes[0].body,
+    //   author: quotes[0].author,
+    //   currentPhoto
+    // }
+    localStorage.setItem(newFavorite.id, JSON.stringify(newFavorite))
+    setFavorites([...favorites, newFavorite])
+  }
+
+  const deleteFavorite = (newFavorite) => {
+    const keptFavorites = favorites.filter(favorite => favorite.id !== newFavorite.quotes[0].id)
+    setFavorites(keptFavorites)
+    localStorage.removeItem(newFavorite.quotes[0].id)
+  }
 
   return (
     <main>
@@ -53,9 +92,10 @@ const App = () => {
           <Quote 
           key={Date.now()}
           theme={chosenTheme} 
-          retrieveThemeFromStorage={retrieveThemeFromStorage}/>}
+          retrieveThemeFromStorage={retrieveThemeFromStorage}
+          toggleFavorites={toggleFavorites}/>}
         />
-        <Route exact path='/favorite' render={() => 
+        <Route exact path='/favorites' render={() => 
           <FavoritesContainer />
         }/>
         <Route render={() => <h1>Nothing to see here</h1>} />
