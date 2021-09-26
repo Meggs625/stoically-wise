@@ -1,6 +1,8 @@
 import React from 'react';
 import FavoriteCard from '../FavoriteCard/FavoriteCard';
 import './FavoritesContainer.css';
+import PropTypes from 'prop-types';
+
 
 const FavoritesContainer = ({ allFavorites, deleteFavorite }) => {
 
@@ -20,7 +22,11 @@ const FavoritesContainer = ({ allFavorites, deleteFavorite }) => {
     {showFavorites}
     </section>
   )
-
 }
 
 export default FavoritesContainer;
+
+FavoritesContainer.propTypes = {
+  allFavorites: PropTypes.array,
+  deleteFavorite: PropTypes.func
+}

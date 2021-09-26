@@ -43,8 +43,6 @@
 }
 
 .plus-sign {
-  /* height: 2em;
-  width: auto; */
   cursor: pointer;
 }
 
@@ -58,13 +56,12 @@
   display: flex;
   justify-content: flex-end;
   margin: 4%;
-  background: transparent;
-  
+  background: transparent;  
 }
 
 .rotate-scale-up:hover {
 	-webkit-animation: rotate-scale-up 0.65s linear both;
-	        animation: rotate-scale-up 0.65s linear both;
+	  animation: rotate-scale-up 0.65s linear both;
 }
 
 /* ----------------------------------------------

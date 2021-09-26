@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
-import unSaved from '../../images/unSaved.png';
-import saved from '../../images/new-purple-light.png';
 import add from '../../images/icons8-add-50.png';
 import PropTypes from 'prop-types';
 
 const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
 
   const [quotes, setQuote] = useState([]);
-  // const [favorite, setFavorite] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState('');
-  // const [favorites, setFavorites] = useState([]);
   const [errorCode, setErrorCode] = useState('')
 
   const fetchData = () => {
@@ -39,28 +35,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
     }
     fetchData()   
     fetchPhotos()
-    // retrieveFavoritesFromStorage()
   }, [theme])
-
-  // const retrieveFavoritesFromStorage = () => {
-  //   const retreivedFavorites = 
-  //     Object.keys(localStorage).filter(key => key !== 'chosenTheme')
-  //       .map(item => JSON.parse(localStorage.getItem(item)))
-  //   if(retreivedFavorites) {
-  //     setFavorites(retreivedFavorites)
-  //   }
-  // }
-
-  // const toggleFavorites = () => {
-  //   const locatedQuote = favorites.find(favorite => favorite.id === quotes[0].id)
-  //   if(locatedQuote) {
-  //     deleteFavorite()
-  //   } else {
-  //     addToFavorites()
-  //   }
-  //   toggleImage()
-  //   // updateStorage();
-  // }
 
   const createFavorite = event => {
     event.preventDefault();
@@ -70,46 +45,17 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
       author: quotes[0].author,
       currentPhoto
     }
-    // toggleImage();
     addToFavorites(newFavorite);
   }
-
-  // const updateStorage = () => {
-  //   console.log('updating')
-  //   localStorage.setItem('favorites', JSON.stringify(favorites))
-  // }
-
-  // const addToFavorites = () => {
-  //   const newFavorite = {
-  //     id: quotes[0].id,
-  //     quote: quotes[0].body,
-  //     author: quotes[0].author,
-  //     currentPhoto
-  //   }
-  //   localStorage.setItem(newFavorite.id, JSON.stringify(newFavorite))
-  //   setFavorites([...favorites, newFavorite])
-  // }
-
-  // const deleteFavorite = () => {
-  //   const keptFavorites = favorites.filter(favorite => favorite.id !== quotes[0].id)
-  //   setFavorites(keptFavorites)
-  //   localStorage.removeItem(quotes[0].id)
-  // }
-
-  // const toggleImage = () => {
-  //   console.log('toggling')
-  //   setFavorite(!favorite)
-  // }
 
   const getErrorCode = (res) => {
     const resErrorCode = res.status;
     setErrorCode(resErrorCode)
   }
 
-
   const displayInfo = () => {
     return quotes.map(quote => (
-      <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
+      <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'}}>
         <div className='quote-info' key={quote.id}>
           <div className='favorite-container'>
             <button onClick={event => createFavorite(event)} className='favorite-btn'><img src={add} alt='add to favorites' className='plus-sign rotate-scale-up'/></button>
@@ -127,8 +73,7 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
       {!currentPhoto && <h2>Please try another theme</h2>}
       {(!errorCode && currentPhoto) && displayInfo()}
     </section>  
-    )
-
+  )
 }
 
 export default Quote;
@@ -136,7 +81,7 @@ export default Quote;
 
 Quote.propTypes = {
   theme: PropTypes.string,
-  retrieveThemeFromStorage: PropTypes.func.isRequired
+  retrieveThemeFromStorage: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func
 }
 
-// {favorite ? saved : unSaved}

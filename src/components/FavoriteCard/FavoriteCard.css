@@ -1,5 +1,4 @@
 .card {
-  /* border: 2px solid #9b59b673; */
   box-shadow: inset 0 -1px 0 0 #fff, inset -3px 0px 5px #9b59b64a;
   border-radius: 20px;
   width: 91vw;
@@ -8,31 +7,6 @@
   display: flex;
   flex-direction: column;
   padding: 2%;
-}
-
-.saved-quote-info {
-  display: flex;
-  flex-direction: column;
-  height: 60%;
-  width: 100%;
-}
-
-.saved-quote {
-  font-size: 1em;
-}
-
-.saved-author {
-  font-size: .25em;
-}
-
-/* .img-container {
-  height: 30%;
-  width: 30%
-} */
-
-.saved-img {
-  height: 30%;
-  width: 100%;
 }
 
 .delete-container {
@@ -52,6 +26,28 @@
   height: 1.25em;
   width: auto;
 }
+
+.saved-img {
+  height: 30%;
+  width: 100%;
+}
+
+.saved-quote-info {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+}
+
+.saved-quote {
+  font-size: 1em;
+}
+
+.saved-author {
+  font-size: .25em;
+}
+
+
 .rotate-scale-up:hover {
 	-webkit-animation: rotate-scale-up 0.65s linear both;
 	        animation: rotate-scale-up 0.65s linear both;

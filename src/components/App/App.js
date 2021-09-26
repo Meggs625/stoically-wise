@@ -11,8 +11,6 @@ const App = () => {
   const [chosenTheme, setChosenTheme] = useState('');
   const [favorites, setFavorites] = useState([]);
 
-
-
   const updateTheme = (inputTheme) => {
     storeTheme(inputTheme)
     setChosenTheme(inputTheme);
@@ -34,10 +32,7 @@ const App = () => {
     retrieveFavoritesFromStorage()
   }, [chosenTheme])
 
-  // useEffect(() => {
-  //   retrieveFavoritesFromStorage()
-  // }, [favorites])
-
+  
   const retrieveFavoritesFromStorage = () => {
     const retreivedFavorites = 
       Object.keys(localStorage).filter(key => key !== 'chosenTheme')
@@ -47,26 +42,7 @@ const App = () => {
     }
   }
 
-  // const toggleFavorites = (newFavorite) => {
-  //   console.log(newFavorite, 'newFavorite')
-  //   const locatedQuote = favorites.find(favorite => favorite.id === newFavorite.id)
-  //   if(locatedQuote) {
-  //     deleteFavorite(newFavorite)
-  //   } else {
-  //     addToFavorites(newFavorite)
-  //   }
-  //   // toggleImage()
-  //   // updateStorage();
-  // }
-
-
   const addToFavorites = (newFavorite) => {
-    // const newFavorite = {
-    //   id: quotes[0].id,
-    //   quote: quotes[0].body,
-    //   author: quotes[0].author,
-    //   currentPhoto
-    // }
     localStorage.setItem(newFavorite.id, JSON.stringify(newFavorite))
     setFavorites([...favorites, newFavorite])
   }
