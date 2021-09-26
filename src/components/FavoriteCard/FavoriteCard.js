@@ -1,6 +1,6 @@
 import React from 'react';
 import './FavoriteCard.css';
-import deleteIcon from '../../images/delete.png'
+import deleteIcon from '../../images/delete.png';
 
 const FavoriteCard = ({ id, quote, author, picture, deleteFavorite}) => {
   return (
@@ -11,8 +11,7 @@ const FavoriteCard = ({ id, quote, author, picture, deleteFavorite}) => {
       <div className='img-container'>      
         <img src={picture} alt='selected theme' className='saved-img'/>
       </div>
-      <div className='saved-quote-info'>
-        
+      <div className='saved-quote-info'>        
         <p className='saved-quote'>{quote}</p>
         <p className='saved-author'>{author}</p>        
       </div>
