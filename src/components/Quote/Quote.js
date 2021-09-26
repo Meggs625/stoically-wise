@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Quote = ({ theme, retrieveFromStorage }) => {
 
   const [quotes, setQuote] = useState([]);
-  const [pics, setPics] = useState([]);
+  // const [pics, setPics] = useState([]);
   const [favorite, setFavorite] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState({})
 
@@ -35,12 +35,12 @@ const Quote = ({ theme, retrieveFromStorage }) => {
       retrieveFromStorage()
     }
     fetchData()   
-    // fetchPhotos()
+    fetchPhotos()
   }, [theme])
 
-  useEffect(() => {
-    fetchPhotos()
-  }, [quotes])
+  // useEffect(() => {
+  //   fetchPhotos()
+  // }, [quotes])
 
   const toggleImage = event => {
     event.preventDefault()
@@ -53,7 +53,7 @@ const Quote = ({ theme, retrieveFromStorage }) => {
       <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'/*add no repeat*/}}>
         <div className='quote-info'>
           <div className='favorite-container'>
-            <button onClick={event => toggleImage(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb'/></button>
+            <button onClick={event => toggleImage(event)} className='favorite-btn'><img src={favorite ? saved : unSaved} alt='favorites lightbulb' className='lightbulb rotate-scale-up'/></button>
           </div>
           <h2 className='quote'>{quote.body}</h2>
           <p className='author'>{quote.author}</p>
