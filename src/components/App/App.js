@@ -3,6 +3,7 @@ import { Route, Switch, Link} from 'react-router-dom';
 import ThemeForm from '../ThemeForm/ThemeForm';
 import Quote from '../Quote/Quote';
 import Navbar from '../Navbar/Navbar';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer'
 import './App.css';
 
 const App = () => {
@@ -54,6 +55,9 @@ const App = () => {
           theme={chosenTheme} 
           retrieveThemeFromStorage={retrieveThemeFromStorage}/>}
         />
+        <Route exact path='/favorite' render={() => 
+          <FavoritesContainer />
+        }/>
         <Route render={() => <h1>Nothing to see here</h1>} />
       </Switch> 
       <footer>
