@@ -106,3 +106,9 @@
 }
 
 /* <a target="_blank" href="https://icons8.com/icon/A0JtKOyp9fqT/lightbulb">Lightbulb</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+
+@media screen and (min-width: 1250px) {
+  .quote-info {
+    margin-top: 12%;
+  }
+}
