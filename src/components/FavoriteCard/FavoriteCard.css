@@ -1,0 +1,13 @@
+.card {
+  height: 200px;
+  width: auto;
+  display: flex;
+}
+
+.saved-quote {
+  font-size: .5em;
+}
+
+.saved-author {
+  font-size: .25em;
+}
