@@ -20,7 +20,6 @@ const FavoritesContainer = ({ allFavorites, deleteFavorite }) => {
     {showFavorites}
     </section>
   )
-
 }
 
 export default FavoritesContainer;
