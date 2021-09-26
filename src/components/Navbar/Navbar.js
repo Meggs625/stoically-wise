@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className='links'>
           {(location.pathname === '/quote' || location.pathname === '/favorites')
            && <Link to='/' className='new-theme'>Select New Theme</Link>}
-          <Link to='/favorites' className='view-favorites'>View Favorites</Link>      
+          {location.pathname === '/favorites' ? <Link to='/quote' className='view-quotes'>Return to Quotes</Link> :  <Link to='/favorites' className='view-favorites'>View Favorites</Link>}    
         </div>
     </section>
   )
