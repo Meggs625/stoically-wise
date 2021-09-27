@@ -1,7 +1,7 @@
 <div align="center"><img src="https://user-images.githubusercontent.com/78767067/134835308-b6796af7-c9ba-4c1d-834a-96d22147dd6e.png" height="150px" width="auto"
 /><h1>Daily Wisdom</h1>
 <p>An application to dive into quotes from stoic philosophers</p>
-<a href="https://meggs625.github.io/stoically-wise/#/">View Deployed Site Here</a>
+<h2><a href="https://meggs625.github.io/stoically-wise/#/">View Deployed Site Here</a></h2>
 </div>
 
 
