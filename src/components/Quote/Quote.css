@@ -43,12 +43,14 @@
 }
 
 .plus-sign {
+  height: 2em;
   cursor: pointer;
 }
 
 .favorite-btn {
   background: transparent;
   border: none;
+  margin-right: 2%;
 }
 
 .favorite-container {
@@ -107,8 +109,12 @@
 
 /* <a target="_blank" href="https://icons8.com/icon/A0JtKOyp9fqT/lightbulb">Lightbulb</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
 
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 800px) {
   .quote-info {
-    margin-top: 12%;
+    margin-top: 7%;
+  }
+
+  .plus-sign {
+    height: 3em;
   }
 }

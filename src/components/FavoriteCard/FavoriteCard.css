@@ -25,6 +25,7 @@
 .delete-icon {
   height: 1.25em;
   width: auto;
+  margin: 2%;
 }
 
 .saved-img {
@@ -91,5 +92,11 @@
   100% {
     -webkit-transform: scale(1) rotateZ(360deg);
             transform: scale(1) rotateZ(360deg);
+  }
+}
+
+@media screen and (min-width: 725px) {
+  .delete-icon {
+    height: 2em;
   }
 }
