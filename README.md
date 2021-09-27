@@ -63,6 +63,11 @@ JavaScript | CSS | React | ReactRouter | Cypress/E2E | fetchAPI |
 ![recording (18)](https://user-images.githubusercontent.com/78767067/134952269-baf4aa7e-690a-40b6-9e9a-c101838cec03.gif)
 
 
+Built with fully responsive design
+
+![Screen Shot 2021-09-27 at 11 13 24 AM](https://user-images.githubusercontent.com/78767067/134955164-7bc072bb-fbe9-4ce5-a9d6-bc173df33bc7.png)
+![Screen Shot 2021-09-27 at 11 13 53 AM](https://user-images.githubusercontent.com/78767067/134955181-0f5c6151-f22f-49ba-a9c0-bb4d19cc29f1.png)
+
 [Return to top](#Daily-Wisdom)
 ---
 
