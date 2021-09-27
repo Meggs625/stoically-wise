@@ -34,13 +34,13 @@
 }
 
 .quote {
-  padding: 10%;
+  padding: 0% 10%;
   font-size: 1.15em;
   overflow-y: scroll;
 }
 
 .author {
-  padding-bottom: 5%;
+  padding: 5% 0%;
 }
 
 .plus-sign {
