@@ -8,3 +8,12 @@
   width: 100vw;
 }
 
+.add-favs-heading {
+  margin: 5%;
+}
+
+@media screen and (min-width: 750px) {
+  .no-favorites {
+    height: 80vh;
+  }
+}
