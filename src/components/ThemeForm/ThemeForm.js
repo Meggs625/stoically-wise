@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { formatTheme } from '../../utils/util';
 import './ThemeForm.css';
 
 
@@ -8,8 +9,9 @@ const ThemeForm = ({ updateTheme }) => {
 
   const [theme, setTheme] = useState('')
 
-  const handleClick = () => {    
-    updateTheme(theme)
+  const handleClick = () => {  
+    const formattedTheme = formatTheme(theme)  
+    updateTheme(formattedTheme)
   }
 
   return (

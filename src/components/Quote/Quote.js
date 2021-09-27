@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
+import { fetchQuote, fetchPhotos } from '../../utils/apiCalls';
 import add from '../../images/icons8-add-50.png';
 import PropTypes from 'prop-types';
 
@@ -9,16 +10,15 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
   const [currentPhoto, setCurrentPhoto] = useState('');
   const [errorCode, setErrorCode] = useState('')
 
-  const fetchData = () => {
-    return fetch('https://stoic-server.herokuapp.com/random', {
-    })
+  const getQuote = () => {
+   fetchQuote('https://stoic-server.herokuapp.com/random')
       .then(res => res.ok ? res.json() : getErrorCode(res))
       .then(data => setQuote(data))
       .catch(err => console.log(err))
   }
 
-  const fetchPhotos = () => {
-    return fetch(`https://pixabay.com/api/?key=23483948-a9995475fd38e7480dc10e8df&q=${theme}&image_type=photo`)
+  const getPhotos = () => {
+    fetchPhotos(`https://pixabay.com/api/?key=23483948-a9995475fd38e7480dc10e8df&q=${theme}&image_type=photo`)
       .then(res => res.ok ? res.json() : console.log(res))
       .then(data => randomPic(data.hits))
       .catch(err => console.log(err))      
@@ -33,8 +33,8 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
     if(!theme) {
       retrieveThemeFromStorage()
     }
-    fetchData()   
-    fetchPhotos()
+    getQuote()   
+    getPhotos()
   }, [theme])
 
   const createFavorite = event => {
