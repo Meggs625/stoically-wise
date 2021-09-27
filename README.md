@@ -57,8 +57,10 @@ JavaScript | CSS | React | ReactRouter | Cypress/E2E | fetchAPI |
 
 
 ### Preview
-- Something
-
+![recording (15)](https://user-images.githubusercontent.com/78767067/134951822-5a4b5ffd-4c3b-43bb-9cd3-6cd1c0f0e6b4.gif)
+![recording (16)](https://user-images.githubusercontent.com/78767067/134951962-aad8f6b8-9b52-4697-be52-50b65e8049c1.gif)
+![recording (17)](https://user-images.githubusercontent.com/78767067/134952090-f4f2368f-2b2d-4d14-bcb7-bb79b60e9c3a.gif)
+![recording (18)](https://user-images.githubusercontent.com/78767067/134952269-baf4aa7e-690a-40b6-9e9a-c101838cec03.gif)
 
 
 [Return to top](#Daily-Wisdom)
@@ -73,10 +75,15 @@ JavaScript | CSS | React | ReactRouter | Cypress/E2E | fetchAPI |
 
 ### Reflection
 
+This project felt like a great way to end the third term at the Turing School of Software and Design. There were some challenges that popped up. The first was being able to find a public API that worked as I hoped reliably. In the end, I was able to find two that were user friendly with great documentation, allowing me to use them as I had hoped. Another challenge I faced was in the organization of my componenents. My original MVP did not include a favoriting feature. When I decided to move in that direction, I had to reorganize components and improve their structure. 
+
+Overall, I felt that I learned from the challenges and enjoyed building this application. My biggest win was adding a feature beyond my MVP and successfully allowing a user to store favorites that will persist on page refresh. Two additional personal goals I had for this project were to give it a fully responsive design and to score above a 95 on the Lighthouse accessibility report - both of which I'm happy to say I was able to achieve. 
+
+I have really enjoyed learning how to use React and feel like this project solidified some concepts for me with both React and React Router. 
+
+
 <br>
 
-
-[Return to top](#Daily-Wisdom)
 
 ---
 ### Contributors
