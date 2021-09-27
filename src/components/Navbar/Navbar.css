@@ -53,4 +53,13 @@
     flex-direction: row;
     justify-content: flex-end;
   }
+
+  .brand {
+    width: 100%;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
 }
