@@ -21,11 +21,11 @@
 ---
 
 ### Summary
-When a user first arrives to the application, they will be greeted by a landing page asking for a theme. The theme will be for what photos will appear with the quotes on the next page. Once a theme has been entered, upon selecting the "Enter" button, the user will navigate to a page displaying a random quote from a well known stoic philosopher. The background will be a photo of the theme selected on the previous page. 
+When a user first arrives at the application, they will be greeted by a landing page asking for a theme. The theme will be for what photos will appear with the quotes on the next page. Once a theme has been entered, upon selecting the "Enter" button, the user will navigate to a page displaying a random quote from a well known stoic philosopher. The background will be a photo of the theme selected on the previous page. 
 
 If there is a quote or photo that speaks to the user, they can select the "+" button in the upper right hand corner of the quote card to store for later. Upon favoriting, a new random quote and photo will display for continued viewing. 
 
-When the user has favorited quotes, they can view them by selecting the "View Favorites" link in the navigation bar. All saved quotes will render on this page. They are all stored in the localStorage of the user's machine to persist upon refresh. Should a user no longer wish to retain a quote, they can select the "-" button in the upper right hand side of the quote card to remove it from the page and storage. The user can navigate back to the quote page or to select a new theme in the navigation bar. 
+When the user has favorite quotes, they can view them by selecting the "View Favorites" link in the navigation bar. All saved quotes will render on this page. They are all stored in the localStorage of the user's machine to persist upon refresh. Should a user no longer wish to retain a quote, they can select the "-" button in the upper right hand side of the quote card to remove it from the page and storage. The user can navigate back to the quote page or to select a new theme in the navigation bar. 
 
 After one theme has been selected, when the user returns to the landing page, a new button will appear with the option to get a quote with the same theme as requested prior. 
 
@@ -45,15 +45,15 @@ JavaScript | CSS | React | ReactRouter | Cypress/E2E | fetchAPI |
 [Return to top](#Daily-Wisdom)
 
 ### Current Features
-- User can select a photo theme to view with their random quotes.
+- Users can select a photo theme to view with their random quotes.
 - User's saved quotes will persist on reload with implemented localStorage for an enhanced user experience. 
-- User can remove any selected quote from their saved list.
+- Users can remove any selected quote from their saved list.
 <br>
 
 
 ### Future Features & Noteworthy Limitations
-- Add a button to the quote display page to allow the user to move to another random quote wihtout having to favorite the current quote. 
-- A search bar could be added to the favorites page to allow the user to find quotes saved by a specific author or with a particular key word.
+- Add a button to the quote display page to allow the user to move to another random quote without having to favorite the current quote. 
+- A search bar could be added to the favorites page to allow the user to find quotes saved by a specific author or with a particular keyword.
 
 
 ### Preview
@@ -80,7 +80,7 @@ Built with fully responsive design
 
 ### Reflection
 
-This project felt like a great way to end the third term at the Turing School of Software and Design. There were some challenges that popped up. The first was being able to find a public API that worked as I hoped reliably. In the end, I was able to find two that were user friendly with great documentation, allowing me to use them as I had hoped. Another challenge I faced was in the organization of my componenents. My original MVP did not include a favoriting feature. When I decided to move in that direction, I had to reorganize components and improve their structure. 
+This project felt like a great way to end the third term at the Turing School of Software and Design. There were some challenges that popped up. The first was being able to find a public API that worked as I hoped reliably. In the end, I was able to find two that were user friendly with great documentation, allowing me to use them as I had hoped. Another challenge I faced was in the organization of my components. My original MVP did not include a favoriting feature. When I decided to move in that direction, I had to reorganize components and improve their structure. 
 
 Overall, I felt that I learned from the challenges and enjoyed building this application. My biggest win was adding a feature beyond my MVP and successfully allowing a user to store favorites that will persist on page refresh. Two additional personal goals I had for this project were to give it a fully responsive design and to score above a 95 on the Lighthouse accessibility report - both of which I'm happy to say I was able to achieve. 
 
