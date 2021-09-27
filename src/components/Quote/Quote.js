@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
-import { fetchQuote, fetchPhotos } from '../../apiCalls';
+import { fetchQuote, fetchPhotos } from '../../utils/apiCalls';
 import add from '../../images/icons8-add-50.png';
 import PropTypes from 'prop-types';
 
