@@ -1,4 +1,5 @@
-<div align="center"><img src=""/><h1>Daily Wisdom</h1>
+<div align="center"><img src="https://user-images.githubusercontent.com/78767067/134835308-b6796af7-c9ba-4c1d-834a-96d22147dd6e.png" height="150px" width="auto"
+/><h1>Daily Wisdom</h1>
 <p>An application to dive into quotes from stoic philosophers</p>
 <a href=>View Deployed Site Here</a>
 </div>
@@ -8,7 +9,7 @@
 ---
 
 [Summary](#summary) |
-[Tech Used](#tech-used)
+[Tech Used](#tech-used) |
 [Getting Started](#getting-started) |
 [Current Features](#current-features) |
 [Future Features & Noteworthy Limitations](#future-features-&-noteworthy-limitations) |
@@ -47,7 +48,7 @@ JavaScript | CSS | React | ReactRouter | Cypress/E2E | fetchAPI |
 - User can select a photo theme to view with their random quotes.
 - User's saved quotes will persist on reload with implemented localStorage for an enhanced user experience. 
 - User can remove any selected quote from their saved list.
-
+<br>
 
 
 ### Future Features & Noteworthy Limitations
