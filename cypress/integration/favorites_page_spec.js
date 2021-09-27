@@ -26,7 +26,7 @@ describe('Favorites Page', () => {
   })
 
   it('Should have a button to remove the quote from the saved quotes', () => [
-    cy.get('.delete-icon').should('be.visible')
+    cy.get('.delete-icon').click()
   ])
 
   it('Should no longer display the card after clicking the delete button', () => {
@@ -43,8 +43,4 @@ describe('Favorites Page', () => {
     cy.get('.home-link').click()
       .get('.welcome-header').should('be.visible')
   })
-
-  it('Should display the recently used theme in the lower button', () => [
-    cy.get('.previous-theme-btn').should('contin', 'flowers')
-  ])
 })

@@ -81,7 +81,7 @@ const App = () => {
             allFavorites={favorites}
             deleteFavorite={deleteFavorite}/>
         }/>
-        <Route render={() => <h1>Nothing to see here</h1>} />
+        <Route render={() => <h1>There appears to be an error. Please check your site path and try again</h1>} />
       </Switch> 
       <footer>
           <a href='https://pixabay.com/' className='credit'>Images from Pixabay</a>
