@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/stoically-wise/static/css/main.69972551.chunk.css",
+    "main.js": "/stoically-wise/static/js/main.67f6d5a1.chunk.js",
+    "main.js.map": "/stoically-wise/static/js/main.67f6d5a1.chunk.js.map",
+    "runtime-main.js": "/stoically-wise/static/js/runtime-main.3e922594.js",
+    "runtime-main.js.map": "/stoically-wise/static/js/runtime-main.3e922594.js.map",
+    "static/js/2.f8656aef.chunk.js": "/stoically-wise/static/js/2.f8656aef.chunk.js",
+    "static/js/2.f8656aef.chunk.js.map": "/stoically-wise/static/js/2.f8656aef.chunk.js.map",
+    "index.html": "/stoically-wise/index.html",
+    "static/css/main.69972551.chunk.css.map": "/stoically-wise/static/css/main.69972551.chunk.css.map",
+    "static/js/2.f8656aef.chunk.js.LICENSE.txt": "/stoically-wise/static/js/2.f8656aef.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/stoically-wise/static/media/spring-flowers.2547b2cb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e922594.js",
+    "static/js/2.f8656aef.chunk.js",
+    "static/css/main.69972551.chunk.css",
+    "static/js/main.67f6d5a1.chunk.js"
+  ]
+}
