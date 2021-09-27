@@ -31,7 +31,7 @@ After one theme has been selected, when the user returns to the landing page, a 
 
  
 ### Tech Used
-JavaScript | CSS | React | ReactRouter | Cypress/E2E | fetchAPI |  
+JavaScript | CSS | React | React Hooks | ReactRouter | Cypress/E2E | fetchAPI |  
 
 ---
 ### Getting Started
@@ -84,7 +84,7 @@ This project felt like a great way to end the third term at the Turing School of
 
 Overall, I felt that I learned from the challenges and enjoyed building this application. My biggest win was adding a feature beyond my MVP and successfully allowing a user to store favorites that will persist on page refresh. Two additional personal goals I had for this project were to give it a fully responsive design and to score above a 95 on the Lighthouse accessibility report - both of which I'm happy to say I was able to achieve. 
 
-I have really enjoyed learning how to use React and feel like this project solidified some concepts for me with both React and React Router. 
+I have really enjoyed learning how to use React and feel like this project solidified some concepts for me with both React (component structure, utilizing hooks, including API async fetches for data, and gaining comfort with JSX) and React Router (appropriately using Link and nestling Routes within a Switch for error handling). 
 
 
 <br>
