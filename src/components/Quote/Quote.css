@@ -19,12 +19,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: auto;
+  height: 55%;
   width: 80%;
   border-radius: 20px;
   background: white;
   opacity: .75;
-  margin-top: 25%;
+  margin-top: 25%;  
 }
 
 .quote, 
@@ -36,6 +36,7 @@
 .quote {
   padding: 10%;
   font-size: 1.15em;
+  overflow-y: scroll;
 }
 
 .author {
@@ -43,19 +44,21 @@
 }
 
 .plus-sign {
+  height: 2em;
   cursor: pointer;
 }
 
 .favorite-btn {
   background: transparent;
   border: none;
+  margin-right: 2%;
 }
 
 .favorite-container {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin: 4%;
+  margin: 2%;
   background: transparent;  
 }
 
@@ -106,3 +109,17 @@
 }
 
 /* <a target="_blank" href="https://icons8.com/icon/A0JtKOyp9fqT/lightbulb">Lightbulb</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+
+@media screen and (min-width: 750px) {
+  .quote-info {
+    margin-top: 7%;
+  }
+
+  .plus-sign {
+    height: 3em;
+  }
+
+  .quote-info {
+    height: 40%;
+  }
+}
