@@ -111,15 +111,13 @@
 /* <a target="_blank" href="https://icons8.com/icon/A0JtKOyp9fqT/lightbulb">Lightbulb</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
 
 @media screen and (min-width: 750px) {
-  .quote-info {
-    margin-top: 7%;
-  }
 
   .plus-sign {
     height: 3em;
   }
 
   .quote-info {
+    margin-top: 7%;
     height: 40%;
   }
 }
