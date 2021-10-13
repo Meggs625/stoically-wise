@@ -55,8 +55,8 @@ const Quote = ({ theme, retrieveThemeFromStorage, addToFavorites }) => {
 
   const displayInfo = () => {
     return quotes.map(quote => (
-      <section className='full-background' style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'}}>
-        <div className='quote-info' key={quote.id}>
+      <section className='full-background' key={quote.id} style={{backgroundImage: `url('${currentPhoto}')`, backgroundColor: 'rgba(0,0,0,0.5)'}}>
+        <div className='quote-info' >
           <div className='favorite-container'>
             <button onClick={event => createFavorite(event)} className='favorite-btn'><img src={add} alt='add to favorites' className='plus-sign rotate-scale-up'/></button>
           </div>     

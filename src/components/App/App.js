@@ -61,7 +61,7 @@ const App = () => {
           <div className='landing-page'>
             <div className='welcome-header'>
               <h1 >Welcome</h1>
-              <h2>Choose a theme</h2>
+              <h2>Choose a photo theme</h2>
             </div>
             <ThemeForm updateTheme={updateTheme}/> 
             {chosenTheme && 
