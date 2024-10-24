@@ -11,6 +11,11 @@ const App = () => {
   const [chosenTheme, setChosenTheme] = useState('');
   const [favorites, setFavorites] = useState([]);
 
+  useEffect(() => {
+    retrieveThemeFromStorage();
+    retrieveFavoritesFromStorage();
+}, [])
+
   const updateTheme = (inputTheme) => {
     storeTheme(inputTheme)
     setChosenTheme(inputTheme);
@@ -24,33 +29,24 @@ const App = () => {
     const storedTheme = JSON.parse(localStorage.getItem('chosenTheme'))
     setChosenTheme(storedTheme)
   }
-
-  useEffect(() => {
-    if(localStorage) {
-      retrieveThemeFromStorage()
-    }
-    retrieveFavoritesFromStorage()
-  }, [chosenTheme])
-
   
   const retrieveFavoritesFromStorage = () => {
-    const retreivedFavorites = 
-      Object.keys(localStorage).filter(key => key !== 'chosenTheme')
-        .map(item => JSON.parse(localStorage.getItem(item)))
+    const retreivedFavorites = JSON.parse(localStorage.getItem('savedFavorites'));
     if(retreivedFavorites) {
       setFavorites(retreivedFavorites)
     }
   }
 
   const addToFavorites = (newFavorite) => {
-    localStorage.setItem(newFavorite.id, JSON.stringify(newFavorite))
-    setFavorites([...favorites, newFavorite])
+    const updatedFavorites = [...favorites, newFavorite];
+    localStorage.setItem("savedFavorites", JSON.stringify(updatedFavorites))
+    setFavorites(updatedFavorites);
   }
 
   const deleteFavorite = (id) => {
     const keptFavorites = favorites.filter(favorite => favorite.id !== id)
     setFavorites(keptFavorites)
-    localStorage.removeItem(id)
+    localStorage.setItem("savedFavorites", JSON.stringify(keptFavorites))
   }
 
   return (
@@ -71,7 +67,6 @@ const App = () => {
         />
         <Route exact path='/quote' render={() => 
           <Quote 
-          key={Date.now()}
           theme={chosenTheme} 
           retrieveThemeFromStorage={retrieveThemeFromStorage}
           addToFavorites={addToFavorites}/>}
@@ -84,8 +79,8 @@ const App = () => {
         <Route render={() => <h1>There appears to be an error. Please check your site path and try again</h1>} />
       </Switch> 
       <footer>
-          <a href='https://pixabay.com/' className='credit'>Images from Pixabay</a>
-          <a href='https://stoic-wisdom.com/api' className='credit'>Quotes from Stoic Wisdom API</a>
+          <a href='https://pixabay.com/' className='credit' target="_blank">Images from Pixabay</a>
+          <a href='https://github.com/benhoneywill/stoic-quotes?tab=readme-ov-file' className='credit' target="_blank">Quotes from Stoic Wisdom API</a>
       </footer>
     </main>
   );

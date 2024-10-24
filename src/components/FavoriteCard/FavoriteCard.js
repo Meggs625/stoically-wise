@@ -24,7 +24,7 @@ const FavoriteCard = ({ id, quote, author, picture, deleteFavorite}) => {
 export default FavoriteCard;
 
 FavoriteCard.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   quote: PropTypes.string.isRequired,
   author: PropTypes.string,
   picture: PropTypes.string,
