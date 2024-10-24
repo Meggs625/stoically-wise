@@ -29,7 +29,7 @@ const App = () => {
     if(localStorage) {
       retrieveThemeFromStorage()
     }
-    retrieveFavoritesFromStorage()
+    // retrieveFavoritesFromStorage()
   }, [chosenTheme])
 
   
