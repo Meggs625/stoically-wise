@@ -84,8 +84,8 @@ const App = () => {
         <Route render={() => <h1>There appears to be an error. Please check your site path and try again</h1>} />
       </Switch> 
       <footer>
-          <a href='https://pixabay.com/' className='credit'>Images from Pixabay</a>
-          <a href='https://stoic-wisdom.com/api' className='credit'>Quotes from Stoic Wisdom API</a>
+          <a href='https://pixabay.com/' className='credit' target="_blank">Images from Pixabay</a>
+          <a href='https://github.com/benhoneywill/stoic-quotes?tab=readme-ov-file' className='credit' target="_blank">Quotes from Stoic Wisdom API</a>
       </footer>
     </main>
   );
