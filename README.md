@@ -4,8 +4,6 @@
 <h2><a href="https://meggs625.github.io/stoically-wise/#/">View Deployed Site Here</a></h2>
 </div>
 
-
-
 ---
 
 [Summary](#summary) |
